@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="content/css/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <p>TO DO APPS</p>
+    </header>
+    <aside class="sidebar">
+        <header id="profile" class="sideheader">
+            <img src="assets/img/profile.png" alt="profile image">
+            <h2>M Mas'ud Yunus</h2>
+            <p>Web Developer</p>
+        </header>
+        <nav>
+            <section id="nav1" class="nav">
+                <a href="#" class="active">Boards</a>
+                <ul>
+                    <li><a href="board.html">My Task</a></li>
+                </ul>
+                <a href="add-board.html">Add Board</a>
+            </section>
+            <section id="nav2" class="nav">
+                <ul>
+                    <li><a href="#">My Profile</a></li>
+                    <li><a href="#">Log Out</a></li>
+                </ul>
+            </section>
+        </nav>
+    </aside>
+    <main id="main">
+        <header class="mainheader">
+            <h2>My Task</h2>
+        </header>
+        <main id="maincontent">
+            <section id="task" class="taskcard">
+                <h3>To Do</h3>
+                <ul class="tasklist">
+                    <li>
+                        <button id="addtask">+ Add Task</button>
+                    </li>
+                </ul>
+            </section>
+            <section id="finish" class="taskcard">
+                <h3>Finish</h3>
+                <ul class="tasklist">
+                    <li>
+                    </li>
+                </ul>
+            </section>
+        </main>
+    </main>
+
+    <script src="content/js/main.js"></script>
+</body>
+
+</html>
