@@ -125,7 +125,7 @@ nav {
     padding: 0.5rem;
     border-radius: 10px;
 } */
-.taskcontainer button {
+.taskcontainer>button {
     width: 100%;
 }
 
@@ -197,7 +197,8 @@ nav {
     color: #373A40;
     display: flex;
     flex-direction: row;
-    gap: 0.5rem;
+    gap: .8rem;
+    line-height: 1.2em;
   }
 
   .listgroups {
@@ -211,13 +212,51 @@ nav {
   .listgroup, .listdate {
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: flex-start;
     width: 100%;
   }
 
-  #taskdelete {
+  .listgroup {
+    gap: 0.5rem;
+  }
+
+  .listtext {
+    font-weight: 500;
+  }
+
+  .listdate::before {
+    content: "Due Date:";
+    font-weight: 500;
+  }
+  .listdate {
+    font-size: 0.9rem;
+  }
+
+  .listpriority {
+    border-radius: 10px;
+    padding: .1rem .5rem;
+    font-size: .8rem;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .listpriority.low {
+    background-color: #4d9c6b;
+  }
+
+  .listpriority.medium {
+    background-color: #F5B041;
+  }
+
+  .listpriority.high {
+    background-color: #E74C3C;
+  }
+
+  .taskdelete {
     width: 20%;
-    background-color: #f82c2c;
+    background-color: #e73c3c;
     border-radius: 10px;
     border: 1px solid #c77a7a;
     box-shadow: rgba(255, 255, 255, .7) 0 1px 0 0 inset;
@@ -225,7 +264,10 @@ nav {
     cursor: pointer;
     margin: 0;
     outline: none;
-    padding: 8px .8em;
     text-align: center;
     text-decoration: none;
+  }
+
+  .checked {
+    text-decoration: line-through;
   }
