@@ -27,6 +27,7 @@ button {
     border: none;
     cursor: pointer;
     transition: all 200ms ease-in-out;
+    color: inherit;
 }
 
 button:hover {
@@ -119,11 +120,11 @@ nav {
     border-bottom: #fff 1px solid;
     padding-bottom: 0.5rem;
 }
-.taskcontainer {
+/* .taskcontainer {
     background-color: #EEF7FF;
     padding: 0.5rem;
     border-radius: 10px;
-}
+} */
 .taskcontainer button {
     width: 100%;
 }
@@ -131,8 +132,8 @@ nav {
 .taskform {
     display: flex;
     flex-direction: column;
-    color: #fff;
-    background-color: #7AB2B2;
+    color: #373A40;
+    background-color: #EEF7FF;
     padding: 0.5rem;
     border-radius: 10px;
     font-weight: 500;
@@ -152,12 +153,12 @@ nav {
 .taskinput, .taskselect, .taskdate {
     padding: 0.5rem;
     border-radius: 10px;
-    border: none;
-}
-.taskdate {
-    margin-bottom: .8rem ;
+    border: solid 1px #7aa7c7;
 }
 
+.taskdate {
+    margin-bottom: 1rem;
+}
 .tasksubmit {
     background-color: #e1ecf4;
     border-radius: 10px;
@@ -189,8 +190,42 @@ nav {
   }
 
   .tasklist li {
-    background-color: #7AB2B2;
+    background-color: #EEF7FF;
     padding: 0.5rem;
     border-radius: 10px;
     margin-bottom: 0.5rem;
+    color: #373A40;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+
+  .listgroups {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 70%;
+  }
+
+  .listgroup, .listdate {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  #taskdelete {
+    width: 20%;
+    background-color: #f82c2c;
+    border-radius: 10px;
+    border: 1px solid #c77a7a;
+    box-shadow: rgba(255, 255, 255, .7) 0 1px 0 0 inset;
+    color: #ffffff;
+    cursor: pointer;
+    margin: 0;
+    outline: none;
+    padding: 8px .8em;
+    text-align: center;
+    text-decoration: none;
   }

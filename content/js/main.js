@@ -8,13 +8,16 @@ const showTasks = function () {
         const taskList = document.querySelector('.tasklist');
         const HTMLString = `
         <li class="taskitem">
-        <div class="listgroup1">
         <input type="checkbox" class="taskcheck">
-        <span class="tasktext">${task.task}</span>
-        <span class="taskpriority">${task.priority}</span>
+        <div class="listgroups">
+        <div class="listgroup">
+        <span class="listtext">${task.task}</span>
+        <span class="listpriority">${task.priority}</span>
         </div>
-        <span class="taskdate">${task.duedate}</span>
-        <button type="button" class="taskdelete">Delete</button>
+        <span class="listdate">${task.duedate}</span>
+        </div>
+        <button type="button" id="taskdelete">Delete</button>
+        
         </li>`
         taskList.insertAdjacentHTML('afterbegin', HTMLString);
     });
@@ -41,7 +44,7 @@ const inputField = function () {
         <button type="submit" class="tasksubmit">Submit</button>
     </form>
     `
-    targetInput.insertAdjacentHTML('afterbegin', HTMLString);
+    targetInput.insertAdjacentHTML('beforeend', HTMLString);
 
     const taskForm = document.getElementById('taskForm');
     taskForm.addEventListener('submit', taskSubmit);
@@ -50,8 +53,7 @@ const inputField = function () {
 addTask.addEventListener('click', inputField);
 
 // Tambahkan Task ke local database
-const taskSubmit = function (event) {
-    event.preventDefault();
+const taskSubmit = function () {
     const taskInput = document.querySelector('.taskinput');
     const taskSelect = document.querySelector('.taskselect');
     const taskDate = document.querySelector('.taskdate');
@@ -69,7 +71,6 @@ const taskSubmit = function (event) {
     const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
     tasks.push(taskObject);
     localStorage.setItem('tasks', JSON.stringify(tasks));
-    taskForm.style.display = 'none';
 }
 
 
