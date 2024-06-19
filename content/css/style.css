@@ -5,10 +5,11 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
     line-height: 1.6;
     background-color: #fff;
     color: #373A40;
+    
 }
 
 ul {
@@ -20,10 +21,12 @@ a {
     color: inherit;
 }
 
+
 button {
     background-color: transparent;
     border: none;
     cursor: pointer;
+    transition: all 200ms ease-in-out;
 }
 
 button:hover {
@@ -116,11 +119,78 @@ nav {
     border-bottom: #fff 1px solid;
     padding-bottom: 0.5rem;
 }
-.tasklist {
+.taskcontainer {
     background-color: #EEF7FF;
     padding: 0.5rem;
     border-radius: 10px;
 }
-.tasklist button {
+.taskcontainer button {
     width: 100%;
 }
+
+.taskform {
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    background-color: #7AB2B2;
+    padding: 0.5rem;
+    border-radius: 10px;
+    font-weight: 500;
+    
+}
+
+.inputgroup {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 0.5rem;
+}
+.taskinput {
+    width: 73%;
+}
+
+.taskinput, .taskselect, .taskdate {
+    padding: 0.5rem;
+    border-radius: 10px;
+    border: none;
+}
+.taskdate {
+    margin-bottom: .8rem ;
+}
+
+.tasksubmit {
+    background-color: #e1ecf4;
+    border-radius: 10px;
+    border: 1px solid #7aa7c7;
+    box-shadow: rgba(255, 255, 255, .7) 0 1px 0 0 inset;
+    color: #39739d;
+    cursor: pointer;
+    margin: 0;
+    outline: none;
+    padding: 8px .8em;
+    text-align: center;
+    text-decoration: none;
+  }
+  
+  .tasksubmit:hover,
+  .tasksubmit:focus {
+    background-color: #b3d3ea;
+    color: #2c5777;
+  }
+  
+  .tasksubmit:focus {
+    box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
+  }
+  
+  .tasksubmit:active {
+    background-color: #a0c7e4;
+    box-shadow: none;
+    color: #2c5777;
+  }
+
+  .tasklist li {
+    background-color: #7AB2B2;
+    padding: 0.5rem;
+    border-radius: 10px;
+    margin-bottom: 0.5rem;
+  }
