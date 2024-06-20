@@ -299,6 +299,11 @@ nav {
   display: none;
 }
 
+.overdue {
+  color: #e73c3c;
+}
+
+
 @media (max-width: 1000px) {
   body {
     font-size: .8rem;
