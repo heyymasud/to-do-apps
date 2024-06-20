@@ -17,6 +17,11 @@ const renderTasks = (containerId, tasks, isFinished) => {
     taskList.innerHTML = '';
 
     tasks.forEach((task, index) => {
+        const dueDate = new Date(task.duedate);
+        const today = new Date();
+        const formattedDate = formatDate(task.duedate);
+        const isOverdue = dueDate < today && !isFinished ? 'overdue' : '';
+
         const HTMLString = `
         <li class="taskitem ${isFinished ? 'finish' : ''}" data-index="${index}">
             ${!isFinished ? '<input type="checkbox" class="taskcheck">' : ''}
@@ -25,12 +30,19 @@ const renderTasks = (containerId, tasks, isFinished) => {
                     <span class="listtext ${isFinished ? 'checked' : ''}">${task.task}</span>
                     <span class="listpriority ${taskBadge(task.priority)}">${task.priority}</span>
                 </div>
-                <span class="listdate ${isFinished ? 'checked' : ''}">${task.duedate}</span>
+                <span class="listdate ${isFinished ? 'checked' : ''} ${isOverdue}">${formattedDate}</span>
             </div>
             <button type="button" class="taskdelete">Delete</button>
         </li>`;
         taskList.insertAdjacentHTML('afterbegin', HTMLString);
     });
+}
+
+// Fungsi menampilkan tanggal sekarang
+const dateNow = () => {
+    const date = new Date();
+    const formattedDate = formatDate(date);
+    document.querySelector('.titleCard>h3').insertAdjacentHTML('afterend', `<span class="dateNow">( ${formattedDate} )</span>`);
 }
 
 // Fungsi menambahkan class badge untuk warna
@@ -155,8 +167,16 @@ const setLocalStorageData = (key, data) => {
     }
 }
 
+// Fungsi format tanggal menjadi dd-mmm-yyyy
+const formatDate = (dateString) => {
+    const options = { day: '2-digit', month: 'short', year: 'numeric' };
+    const date = (typeof dateString === 'string') ? new Date(dateString) : dateString;
+    return date.toLocaleDateString('en-GB', options).replace(/ /g, '-');
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     showTasks();
     deleteAllEvent();
+    dateNow();
 });
 addTaskButton.addEventListener('click', inputField);
