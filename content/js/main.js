@@ -42,7 +42,7 @@ const renderTasks = (containerId, tasks, isFinished) => {
 const dateNow = () => {
     const date = new Date();
     const formattedDate = formatDate(date);
-    document.querySelector('.titleCard>h3').insertAdjacentHTML('afterend', `<span class="dateNow">( ${formattedDate} )</span>`);
+    document.querySelector('.titleCard>h3').insertAdjacentHTML('beforeend', `<span class="dateNow"> ( ${formattedDate} )</span>`);
 }
 
 // Fungsi menambahkan class badge untuk warna
