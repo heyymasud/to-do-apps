@@ -11,11 +11,22 @@
 <body>
     <header class="header">
         <p>TO DO APPS</p>
+        <nav class="navmobile">
+            <a href="#"><img src="assets/img/profile.png" alt="profile"></a>
+            <ul class="navmenu">
+                <li class="navprofile"><img src="assets/img/profile.png" alt="profile">
+                    <h5>M Mas'ud Yunus</h5>
+                    <p>Web Developer</li>
+                <li class="navitem"></p></li>
+                <li class="navitem"><a href="#">My Profile</a></li>
+                <li class="navitem"><a href="#">Log Out</a></li>
+            </ul>
+        </nav>
     </header>
     <aside class="sidebar">
         <header id="profile" class="sideheader">
             <img src="assets/img/profile.png" alt="profile image">
-            <h2>M Mas'ud Yunus</h2>
+            <h3>M Mas'ud Yunus</h3>
             <p>Web Developer</p>
         </header>
         <nav>
@@ -40,17 +51,23 @@
         </header>
         <main id="maincontent">
             <section id="task" class="taskcard">
-                <h3>To Do</h3>
+                <div class="titleCard">
+                    <h3>To Do</h3>
+                    <button type="button" id="deleteAll" class="taskdeleteall">DeleteAll</button>
+                </div>
                 <div class="taskcontainer">
-                <ul id="tasktodo" class="tasklist">
-                </ul>
-                <button type="button" id="addtask">+ Add Task</button>
-            </div>
+                    <ul id="tasktodo" class="tasklist">
+                    </ul>
+                    <button type="button" id="addtask">+ Add Task</button>
+                </div>
             </section>
             <section id="finish" class="taskcard">
+                <div class="titleCard">
                 <h3>Finish</h3>
+                <button type="button" id="deleteAllFinish" class="taskdeleteall finish">DeleteAll</button>
+                </div>
                 <ul id="taskfinish" class="tasklist">
-                    
+
                 </ul>
             </section>
         </main>
